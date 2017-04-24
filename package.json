@@ -1,0 +1,11 @@
+{
+  "name": "SpaceApps2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ltfschoen/SpaceApps2017",
+  "author": "Luke Schoen <ltfschoen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

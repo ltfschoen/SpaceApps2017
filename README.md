@@ -1,3 +1,10 @@
+Setup
+====================
+* Download [Docker CE](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+* Run Docker CE `open -a /Applications/Docker.app`
+* Build Docker Image `docker build -t ltfschoen/my-nodejs-app:v1 .`
+* Run Docker Image `docker run -it --rm --name my-nodejs-app ltfschoen/my-nodejs-app:v1`
+* Delete dangling containers `docker rmi $(docker images -f dangling=true -q)`
 
 SpaceApps 2017 Links
 ====================
@@ -53,3 +60,6 @@ Resources
 
 * Other
 	* Hope Spots (Mission Blue) - https://www.mission-blue.org/hope-spots/
+
+* Sample Projects
+	* NASA Space App similar data (python, flask) - https://github.com/jonroberts/nasaMining
