@@ -1,0 +1,6 @@
+# Replace with name of Docker Image created with Dockerfile
+FROM ltfschoen/node-app:v1
+
+ADD . /usr/src/app
+RUN npm build
+CMD [ "npm", "start" ]

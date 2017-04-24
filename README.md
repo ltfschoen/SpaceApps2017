@@ -3,8 +3,13 @@ Setup
 * Download [Docker CE](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 * Run Docker CE `open -a /Applications/Docker.app`
 * Build Docker Image `docker build -t ltfschoen/my-nodejs-app:v1 .`
-* Run Docker Image `docker run -it --rm --name my-nodejs-app ltfschoen/my-nodejs-app:v1`
+* Run Docker Image `docker run -it --rm --name my-nodejs-app -p 8080:8080 -d ltfschoen/my-nodejs-app:v1`
+* Stop running Docker Container `docker ps -a` `docker stop [container_id]`
 * Delete dangling containers `docker rmi $(docker images -f dangling=true -q)`
+* Go to http://192.168.99.100:8080/graphql
+	* Click "Docs"
+	* Enter value in code (i.e. `{ counter }`)
+* Go to http://192.168.99.100:8080/
 
 SpaceApps 2017 Links
 ====================
