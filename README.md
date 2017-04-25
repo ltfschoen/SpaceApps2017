@@ -4,7 +4,8 @@ SpaceApps 2017 Links
 
 * Pre-Event 
 	* Website - https://2017.spaceappschallenge.org/locations/sydney/pre-event/
-	* Slides - General - https://drive.google.com/file/d/0B9eL2xI6bfA3WmpBLWM3ZGNPWHM/view
+	* Slides Info Night - General - https://drive.google.com/file/d/0B9eL2xI6bfA3WmpBLWM3ZGNPWHM/view
+	* Slides Dr Jason - https://files.slack.com/files-pri/T4EFQBRG8-F542VA34J/download/workshop_-_jason.pptx
 
 * Event 
 	* Sydney Info - https://2017.spaceappschallenge.org/locations/sydney/
