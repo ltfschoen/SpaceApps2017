@@ -17,6 +17,15 @@ SpaceApps 2017 Links
 	* Facebook NASASpaceAppsSydney - https://www.facebook.com/NASASpaceAppsSydney
 	* Twitter - https://twitter.com/spaceapps (tags "#SpaceApps" and "#SpaceAppsSydney")
 
+Goals
+====================
+
+* Chose Categories, from either of these:
+	* Fires - https://2017.spaceappschallenge.org/challenges/warning-danger-ahead/and-you-can-help-fight-fires/details
+	* Solar - https://2017.spaceappschallenge.org/challenges/earth-and-us/you-are-my-sunshine/details
+
+* Aim to successfully download any useful data for either of the categories prior to devising a solution
+
 Resources
 ====================
 
