@@ -44,8 +44,17 @@ all the way from looking for datasets to visualising them with graphs
                 - Always if... (context or entity fields that when satisfied trigger the action,
                                 for use as escape hatch for cases when Wit's model predicts wrong action)
                 ```
-            * Stories
+            * **Stories** (create example conversations)
                 * User says something
+                	* **Import Note:** 
+                		```
+                		i.e.
+                		Step 1: Enter Sentence "What's your age?"
+                		Step 2: Click + to Add a new entity, choose "intent"
+                		Step 3: Select (i.e. double click a word in the 
+                		original Sentence such as "age" to make this the 
+                		Variable)
+                		```
                 * **Entities** extracted from what users say
                     * `intent`  (user-defined Entity)
                     * `Wit/...` (pre-defined Entities)
@@ -64,6 +73,15 @@ all the way from looking for datasets to visualising them with graphs
                     Entities extracted from last user message
                      (i.e. store extracted Entities,
                     or do calculation, or call external API)
+                    * **Updates context-keys with...**
+                    	* **Predicates** Wit can predict the
+                    	next step to perform based on **context-keys**
+                    	in the **context-object**. **context-keys** 
+                    	that are described by the developer are
+                    	updated by an Action (i.e. function).
+                    	When multiple **context** conditions must be
+                    	met to continue on a **path** of a Story,
+                    	use `&&` (i.e. `x && y`) 
                 * **Bot Jumps**
                     * Instruct the Bot to jump to different
                     part of Story (provide Story Location to Jump To,
