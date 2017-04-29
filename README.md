@@ -6,30 +6,29 @@ Project
     * Members https://2017.spaceappschallenge.org/challenges/ideate-and-create/data-concierge/teams/apollo-bot/members
 * **Goal**: Facebook chatbot to automate earth data processing pipelines
 all the way from looking for datasets to visualising them with graphs
-   * Delivery Strategy:
+    * Delivery Strategy:
         * Group 1 - Natural language processing AI implementation tutorial https://github.com/hunkim/Wit-Facebook
         * Group 2 - Messenger Chatbot Tutorial https://developers.facebook.com/docs/messenger-platform/guides/quick-start
             * https://wit.ai/home
             * https://wit.ai/ltfschoen/MyFirstApp/entities
-   * **Name**: **Apollo-bot**
-   * **Motto**: Making data universally accessible
-   * **Logo**:
+    * **Name**: **Apollo-bot**
+    * **Motto**: Making data universally accessible
+    * **Logo**:
         * Create Logo with **Canva**
+    * **About** Apollo-bot is designed to lower the barrier of entry to NASA Earth data.
+    Apollo-bot is a smart Chatbot AI tool, designed using Wit (built with NLU algorithms upon proven Facebook technologies including Facebook's AI and NLP platforms: DeepText and FBLearner Flow) that integrates with Facebook's Messenger API and GUI.
+    Apollo-bot was designed to help communication between people (i.e. Earth science data enthusiasts and consumers) with the terabytes of NASA's Earth science datasets and resources obtained from 18 satellites and 3 instruments aboard the ISS that observes Earth:
 
-	 * **About** Apollo-bot is designed to lower the barrier of entry to NASA Earth data. 
-	 Apollo-bot is a smart Chatbot AI tool, designed using Wit (built with NLU algorithms upon proven Facebook technologies including Facebook's AI and NLP platforms: DeepText and FBLearner Flow) that integrates with Facebook's Messenger API and GUI.
-	 Apollo-bot was designed to help communication between people (i.e. Earth science data enthusiasts and consumers) with the terabytes of NASA's Earth science datasets and resources obtained from 18 satellites and 3 instruments aboard the ISS that observes Earth:
-	
-	 * Checklist:
-			* [ ] - Helping users with their searches with suggestions that identify which datasets are useful to them AND how to access them
-			* [ ] - Helping users with their searches with suggestions that identify what resources are useful to them AND how to access them
-			* [ ] - Identify how would determine if tool was helpful or needs improvement
-			* [ ] - Identify how our tool learns as it is being used, in order to improve its capabilities
-			* [ ] - Consider perspectives and user flows of various professionals, outdoor enthusiasts, and those with specific curiosities, and what types of information they would be interested in (i.e. datasets, images, articles)
-			* [ ] - Tweet to Sponsors with Hash Tags (i.e. #academyxi, spaceapps, aws, canva, coderfactory, cityconnect)
+    * Checklist:
+        * [ ] - Helping users with their searches with suggestions that identify which datasets are useful to them AND how to access them
+        * [ ] - Helping users with their searches with suggestions that identify what resources are useful to them AND how to access them
+        * [ ] - Identify how would determine if tool was helpful or needs improvement
+        * [ ] - Identify how our tool learns as it is being used, in order to improve its capabilities
+        * [ ] - Consider perspectives and user flows of various professionals, outdoor enthusiasts, and those with specific curiosities, and what types of information they would be interested in (i.e. datasets, images, articles)
+        * [ ] - Tweet to Sponsors with Hash Tags (i.e. #academyxi, spaceapps, aws, canva, coderfactory, cityconnect)
 
 * **Wit**
-    * About: Natural Language interface for apps and devices
+    * **About**: Natural Language interface for apps and devices
     * **Wit Testing / Understanding** https://wit.ai/ltfschoen/MyFirstApp/entities
     (of entities)
         * Training
