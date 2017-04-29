@@ -16,12 +16,17 @@ all the way from looking for datasets to visualising them with graphs
    * **Logo**:
         * Create Logo with **Canva**
 
-* **Tag Sponsors**  
-    * TODO Tweet to Sponsors: i.e. #academyxi, #spaceapps, aws, canva, coderfactory
-    * CityConnect https://cityconnect.co/
-    * AWS Voucher $100 valid for 1 year (must get this year)
-        * https://pages.awscloud.com/2017spaceapps.html
-    * AcademyXi (Ben Wong)
+	 * **About** Apollo-bot is designed to lower the barrier of entry to NASA Earth data. 
+	 Apollo-bot is a smart Chatbot AI tool, designed using Wit (built with NLU algorithms upon proven Facebook technologies including Facebook's AI and NLP platforms: DeepText and FBLearner Flow) that integrates with Facebook's Messenger API and GUI.
+	 Apollo-bot was designed to help communication between people (i.e. Earth science data enthusiasts and consumers) with the terabytes of NASA's Earth science datasets and resources obtained from 18 satellites and 3 instruments aboard the ISS that observes Earth:
+	
+	 * Checklist:
+			* [ ] - Helping users with their searches with suggestions that identify which datasets are useful to them AND how to access them
+			* [ ] - Helping users with their searches with suggestions that identify what resources are useful to them AND how to access them
+			* [ ] - Identify how would determine if tool was helpful or needs improvement
+			* [ ] - Identify how our tool learns as it is being used, in order to improve its capabilities
+			* [ ] - Consider perspectives and user flows of various professionals, outdoor enthusiasts, and those with specific curiosities, and what types of information they would be interested in (i.e. datasets, images, articles)
+			* [ ] - Tweet to Sponsors with Hash Tags (i.e. #academyxi, spaceapps, aws, canva, coderfactory, cityconnect)
 
 * **Wit**
     * About: Natural Language interface for apps and devices
@@ -104,14 +109,15 @@ all the way from looking for datasets to visualising them with graphs
     * **Wit Blog** https://wit.ai/blog
     * **Wit Logs** https://wit.ai/ltfschoen/MyFirstApp/logs/-1
         * Mode: Debug/Reading
+        * Setup: To see logs, first create Stories, and then perform a HTTP request
+        using cURL, which will be recorded in the logs 
+        	```
+          curl \
+           -H 'Authorization: Bearer PCNJGE5L6I2JSAIEHP3OE4BVXNBXVF3I' \
+           'https://api.wit.ai/message?v=29/04/2017&q='
+        	```
     * **Wit Settings**
         * https://wit.ai/ltfschoen/MyFirstApp/settings
-            * cURL
-                ```
-                curl \
-                 -H 'Authorization: Bearer PCNJGE5L6I2JSAIEHP3OE4BVXNBXVF3I' \
-                 'https://api.wit.ai/message?v=29/04/2017&q='
-                ```
             * API details
             * Export data as .zip
     * **Wit GitHub Issues** https://github.com/wit-ai/wit/issues
@@ -123,6 +129,8 @@ all the way from looking for datasets to visualising them with graphs
 
     * NPL
         * Semantic space (similarity between keywords)
+    * AWS Voucher $100 valid for 1 year (must get this year)
+        * https://pages.awscloud.com/2017spaceapps.html
 
 
 SpaceApps 2017 Links
