@@ -45,6 +45,11 @@ all the way from looking for datasets to visualising them with graphs
                                 for use as escape hatch for cases when Wit's model predicts wrong action)
                 ```
             * **Stories** (create example conversations)
+            		* **Purpose** Write different examples of questions 
+            		the user may ask and answers from the Bot in browser 
+            		UI, then can click "Export App" to export it all in
+            		JSON format to the custom Bot server we are creating 
+
                 * User says something
                 	* **Import Note:** 
                 		```
