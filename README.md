@@ -25,7 +25,14 @@ all the way from looking for datasets to visualising them with graphs
         * [ ] - Identify how would determine if tool was helpful or needs improvement
         * [ ] - Identify how our tool learns as it is being used, in order to improve its capabilities
         * [ ] - Consider perspectives and user flows of various professionals, outdoor enthusiasts, and those with specific curiosities, and what types of information they would be interested in (i.e. datasets, images, articles)
-        * [ ] - Tweet to Sponsors with Hash Tags (i.e. #academyxi, spaceapps, aws, canva, coderfactory, cityconnect)
+        * [ ] - Tweet to Sponsors with Hash Tags (i.e. @spaceappssydney @nasaspaceappssydney @dotCO @academyxi ‏@NASAKennedy @BlueChilliGroup @CityConnectBC @coderfactory @UTSEngage @canva @awscloud #nasaapps #SpaceApps #SpaceAppsSydney)
+
+    * API
+        * Create Token
+            * https://wiki.earthdata.nasa.gov/display/echo/Creating+a+Token
+        * ECHO REST https://wiki.earthdata.nasa.gov/display/echo/Earth+Observing+System+Clearing+House+-+ECHO
+        * Guide curl https://cmr.uat.earthdata.nasa.gov:443/search/concepts/G1000005515-ORNL_DAAC/7 | grep "URL"
+        * Forum https://wiki.earthdata.nasa.gov/display/CMR/CMR+Client+Developer+Forum
 
 * **Wit**
     * **About**: Natural Language interface for apps and devices
@@ -98,7 +105,7 @@ all the way from looking for datasets to visualising them with graphs
                     * Usage: Click "Jump", enter "Bookmark" name
                     you created to jump to it
     * **Wit Stories** https://wit.ai/ltfschoen/MyFirstApp/stories
-    * **Wit Docs Quickstart** https://wit.ai/docs/quickstart
+    * **Wit Docs Quickstart** https://wit.ai/docs/quickstart. See Quickstart notes below.
     * **Wit Docs Recipes** https://wit.ai/docs/recipes
     * **Wit Docs API HTTP** https://wit.ai/docs/http/20170307
     * **Wit SDK**
@@ -130,6 +137,111 @@ all the way from looking for datasets to visualising them with graphs
         * Semantic space (similarity between keywords)
     * AWS Voucher $100 valid for 1 year (must get this year)
         * https://pages.awscloud.com/2017spaceapps.html
+    * https://www.neuralink.com/
+
+# Quickstart Notes
+
+Wit.ai can help you parse a message into structured data (Understand) or predict the next action your bot should perform (Converse).
+
+* QuickStart
+    * Configure Wit to parse a message into structured data "**Understand**"
+    what users say to the Apollo-bot by providing "Stories" to Teach and configure Wit by example.
+    Wit is able to infer and recognise your "**intent**" (i.e. to get a temperature) based on just a few questions you provide,
+    so it may provide a response. Teach Wit what a sentence means by using **Entities** (pieces of info to detect from user input)
+    such as the "Trait Entity" that Apollo-bot can detect and improve its understanding each time "Validate" is
+    performed https://wit.ai/ltfschoen/MyFirstApp/entities.
+    Wit can help you predict the next Action your bot should perform (**Converse**).
+    **Recipes** are designed to help with both the **Understand** and **Converse** capabilities by looking at common problems
+    and recipes to address them.
+    i.e.
+    1) Add value "temperature_get" to an "intent" Entity (Trait Entity) with : https://wit.ai/ltfschoen/MyFirstApp/entities/intent
+    2) Add user question "What's the current temperature?", click "intent", select "temperature_get" Trait Entity from the drop-down. Click "Validate" https://wit.ai/ltfschoen/MyFirstApp/entities
+    3) Go back to https://wit.ai/ltfschoen/MyFirstApp/entities/intent, and see the sentence under "Expressions"
+    4) Query the app via Wit..ai API using cURL. Go to Settings https://wit.ai/ltfschoen/MyFirstApp/settings, type in "what's the temperature in there?" to populate the cURL request query value, then copy/paste and run in terminal.
+        ```
+        curl \
+        -H 'Authorization: Bearer PCNJGE5L6I2JSAIEHP3OE4BVXNBXVF3I' \
+        'https://api.wit.ai/message?v=29/04/2017&q=what%27s%20the%20temperature%20in%20there%3F'
+        ```
+    5) View response to see if the intent was correctly captured by Wit:
+        ```
+        {
+          "msg_id" : "47d88f85-03d4-43c1-a1db-d0b17bf8af05",
+          "_text" : "what's the temperature in there?",
+          "entities" : {
+            "intent" : [ {
+              "confidence" : 1.0,
+              "value" : "temperature_get"
+            } ]
+          }
+        }
+        ```
+    6) Add value "temperature_set" to "intent" associated with Expression
+    "Set the temperature to 70 degrees" and Validate
+    7) Capture specific info (i.e. the provided temperature).
+    Add New Entity, select existing `wit/temperature`, then we need to select
+    the relevant text in our sentence that has the specific info (i.e. "70 degrees") and
+    Validate
+    Repeat 6) and 7) for another statement "Set the temperature to 62 degrees"
+    8) Test response with cURL
+        ```
+        {
+          "msg_id" : "6e1e7b0a-fa36-4550-ba4d-283703c06f80",
+          "_text" : "Set the temperature to 70 degrees",
+          "entities" : {
+            "temperature" : [ {
+              "confidence" : 0.9879510810528682,
+              "value" : 70,
+              "type" : "value",
+              "unit" : "degree"
+            } ]
+          }
+        }
+        ```
+    9) Build custom logic for bot/app to Get or Set temperature
+    10) Integrate Wit into bot/app using HTTP API with either:
+        * Node.js client
+        * Python client
+        * Ruby client
+
+* Recipes
+	* Understand
+		* Natural Language Processing (NLP) allows understand user input by parsing text or speech into structured data
+		by using Duckling linguist (Clojure library) https://duckling.wit.ai/
+		* User "intent" may be mapped to many different "Expressions".
+		* More "Expressions" Validated for each "intent" value improves performance of NLP confidence
+		* Normalise data to from a raw message to provide a specific Type of value (i.e. "tomorrow" mapped to `datetime`)
+		* **Using Entity Types**
+			* **Build-in (select a built-in i.e. "wit/...")**
+			(pre-trained across Wit dataset so perform well)
+				* Example:
+					```
+					Given inputs:
+						"What weather here?"
+						"What weather Sydney?"
+					Provide a "location" Entity (keyword type) with respective values of "here", "Sydney"
+					Use the Recipe of Extracting using "wit/location"
+					```
+			* **Keyword Types** (select only "keyword")
+				* i.e. Create Entity "pizza_type". Add **keyword** values to it
+				(i.e. "cheese", "mexican", etc). Type a sentence with a **keyword**
+				and Wit will identify its type and extract it
+
+			* **Predefined List + Inference** (select both "free-text" and "keyword")
+				* If have a type (i.e. pizza) and specific values added (i.e. cheese)
+				then it will infer a sentence even if non-existant value provided
+				(i.e. "tomatoe pizze")
+
+			* **Entity Substrings** (select "free-text" and "keyword" search strategies)
+				* Select substring of text from original sentence.
+
+
+    * Context object is managed and updated by the developer and tells Wit.ai about current state of conversation.
+    Wit.ai predicts next Action to take by comparing Context (from Stories)
+    with the Context sent to /converse endpoint.
+    One Context Object per Session.
+
+    * Session ID is uniquely generated by developer to Group Messages from same user Request/Conversation
 
 
 SpaceApps 2017 Links
